@@ -22,7 +22,6 @@ This project demonstrates a modern workflow for deploying Python web apps:
 | Frontend     | Jinja2 Templates (HTML + CSS) |
 | Container    | Docker            |
 | CI/CD        | GitHub Actions    |
-| Deployment   | Render (or your choice) |
 
 ---
 
@@ -76,4 +75,5 @@ Every push triggers:
 
 📝 License
 MIT License<License> 
+
 
