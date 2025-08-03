@@ -1,6 +1,6 @@
 # 📚 Bookstore API Dashboard - Flask + Docker + CI/CD
 
-A smart Flask web app to display books using the **Google Books API**, styled beautifully and built with an end-to-end **CI/CD pipeline using Docker & GitHub Actions**.
+A smart Flask web app to display books using the **Google Books API**, styled and built with an end-to-end **CI/CD pipeline using Docker & GitHub Actions**.
 
 ---
 
@@ -10,7 +10,6 @@ This project demonstrates a modern workflow for deploying Python web apps:
 - Flask web app fetching live book data
 - Dockerized for consistent builds
 - CI/CD pipeline using GitHub Actions
-- (Optional) Hosted on Render / Railway / Fly.io
 
 ---
 
@@ -77,3 +76,4 @@ Every push triggers:
 
 📝 License
 MIT License<License> 
+
