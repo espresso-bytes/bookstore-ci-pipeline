@@ -51,11 +51,8 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        /* Optional: make filter dropdown arrow white */
         select[name="filter"] {
             appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
             background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
             background-repeat: no-repeat;
             background-position-x: 95%;
@@ -117,28 +114,24 @@
 
     <form method="get" class="mb-6">
         <input type="text" name="search" value="{{ search_query }}" placeholder="Search books..." />
-
         <select name="filter">
             <option value="none" {% if selected_filter == 'none' %}selected{% endif %}>No Filter</option>
-            <option value="high_rating" {% if selected_filter == 'high_rating' %}selected{% endif %}>Highest Rating</option>
-            <option value="low_price" {% if selected_filter == 'low_price' %}selected{% endif %}>Lowest Price</option>
+            <option value="rating" {% if selected_filter == 'rating' %}selected{% endif %}>Highest Rating</option>
+            <option value="price" {% if selected_filter == 'price' %}selected{% endif %}>Lowest Price</option>
         </select>
-
-        <button type="submit">
-            🔍 Search & Filter
-        </button>
+        <button type="submit">🔍 Search & Filter</button>
     </form>
 
     <div class="book-container">
         {% for book in books %}
             <div class="book-card">
-                {% if book.thumbnail %}
-                    <img src="{{ book.thumbnail }}" alt="Book cover">
+                {% if book.Thumbnail or book.thumbnail %}
+                    <img src="{{ book.Thumbnail or book.thumbnail }}" alt="Book cover">
                 {% endif %}
-                <div class="book-title">{{ book.title }}</div>
-                <div class="book-author">{{ book.authors }}</div>
-                <div class="book-rating">⭐ Rating: {{ book.rating }}</div>
-                <div class="book-price">💰 Price: {{ book.price }}</div>
+                <div class="book-title">{{ book.Title or book.title }}</div>
+                <div class="book-author">{{ book.Author or book.authors }}</div>
+                <div class="book-rating">⭐ Rating: {{ book.Rating or book.rating }}</div>
+                <div class="book-price">💰 Price: ₹{{ book["Price (INR)"] or book.price }}</div>
             </div>
         {% endfor %}
     </div>
