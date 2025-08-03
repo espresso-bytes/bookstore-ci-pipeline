@@ -74,6 +74,7 @@ Every push triggers:
 ✅ Shows Rating & Price (INR)
 
 📝 License
-MIT License<License> 
+[MIT License](License) 
+
 
 
